@@ -26,27 +26,31 @@ namespace Application.UseCases.Query
             IList<User_DTO> _usersFollowed = new List<User_DTO>();
             var _subscriber = _userRepository.Get(subscriber);
 
-            // We add the subscribers User_DTO object to the list of Users we want to take posts from.
-            _usersFollowed.Add(_subscriber);
-
-            // Finish constructing the list of Users
-            foreach (var _item in _subscriber.Subscriptions)
+            if (_subscriber != null)
             {
-                _usersFollowed.Add(_userRepository.Get(_item.Follows));
-            }
+                // We add the subscribers User_DTO object to the list of Users we want to take posts from.
+                _usersFollowed.Add(_subscriber);
 
-            // Now we have the list of users followed we can construct our rtn list of Posts
-            IList<Post_DTO> _posts = new List<Post_DTO>();
-            foreach (var _user in _usersFollowed)
-            {
-                foreach (var _post in _user.Posts)
+                // Finish constructing the list of Users
+                foreach (var _item in _subscriber.Subscriptions)
                 {
-                    _posts.Add(_post);
+                    _usersFollowed.Add(_userRepository.Get(_item.Follows));
                 }
+
+                // Now we have the list of users followed we can construct our rtn list of Posts
+                IList<Post_DTO> _posts = new List<Post_DTO>();
+                foreach (var _user in _usersFollowed)
+                {
+                    foreach (var _post in _user.Posts)
+                    {
+                        _posts.Add(_post);
+                    }
+                }
+            return _posts;
             }
 
             // DEFAULT RETURN:
-            return _posts;
+            return null;
         }
     }
 }

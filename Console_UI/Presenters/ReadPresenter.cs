@@ -10,13 +10,17 @@ namespace Console_UI.Presenters
         public string Render(User_DTO user)
         {
             var _output = new StringBuilder();
-            var posts = user.Posts.ToList();
-            posts.Reverse();
 
-            foreach (var _item in posts)
+            if (user != null)
             {
-                _output.Append(_item.Detail + PresenterService.GetElapsedTime(_item.CreatedDateStamp));
-                _output.AppendLine();
+                var posts = user.Posts.ToList();
+                posts.Reverse();
+
+                foreach (var _item in posts)
+                {
+                    _output.Append(_item.Detail + PresenterService.GetElapsedTime(_item.CreatedDateStamp));
+                    _output.AppendLine();
+                }
             }
 
             // DEFAULT RETURN:
