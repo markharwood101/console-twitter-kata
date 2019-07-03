@@ -20,7 +20,7 @@ namespace Console_UI.Presenters
 
                 foreach (var _item in orderedList)
                 {
-                    _output.Append(_item.CreatedBy + " - " + _item.Detail + " (" + PresenterService.GetElapsedTime(_item.CreatedDateStamp));
+                    _output.Append(_item.CreatedBy + " - " + _item.Detail + PresenterService.GetElapsedTime(_item.CreatedDateStamp));
                     _output.AppendLine();
                 }
             }

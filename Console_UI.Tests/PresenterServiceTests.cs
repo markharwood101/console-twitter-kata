@@ -15,7 +15,7 @@ namespace Console_UI.UnitTests
 
             var result = PresenterService.GetElapsedTime(postedTime);
 
-            Assert.That(result, Is.EqualTo("(1 seconds ago.)"));
+            Assert.That(result, Is.EqualTo(" (1 seconds ago.)"));
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace Console_UI.UnitTests
 
             var result = PresenterService.GetElapsedTime(postedTime);
 
-            Assert.That(result, Is.EqualTo("(1 minutes and 1 seconds ago.)"));
+            Assert.That(result, Is.EqualTo(" (1 minutes and 1 seconds ago.)"));
         }
 
     }
