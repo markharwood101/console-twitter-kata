@@ -21,9 +21,9 @@ namespace Application.UseCases.Query
         /// as it seemed incorect but it would have made this method cleaner but could have caused problems later.
         /// So this method first gets posts for the user and then for the users they follow to construct the posts needed for a wall
         /// </summary>
-        public IEnumerable<IPost_DTO> Execute(string subscriber)
+        public IEnumerable<Post_DTO> Execute(string subscriber)
         {
-            IList<IUser_DTO> _usersFollowed = new List<IUser_DTO>();
+            IList<User_DTO> _usersFollowed = new List<User_DTO>();
             var _subscriber = _userRepository.Get(subscriber);
 
             // We add the subscribers User_DTO object to the list of Users we want to take posts from.
@@ -36,17 +36,17 @@ namespace Application.UseCases.Query
             }
 
             // Now we have the list of users followed we can construct our rtn list of Posts
-            IList<IPost_DTO> posts = new List<IPost_DTO>();
+            IList<Post_DTO> _posts = new List<Post_DTO>();
             foreach (var _user in _usersFollowed)
             {
                 foreach (var _post in _user.Posts)
                 {
-                    posts.Add(_post);
+                    _posts.Add(_post);
                 }
             }
 
             // DEFAULT RETURN:
-            return posts;
+            return _posts;
         }
     }
 }

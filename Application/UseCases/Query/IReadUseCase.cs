@@ -4,6 +4,6 @@ namespace Application.UseCases.Query
 {
     public interface IReadUseCase
     {
-        IUser_DTO Execute(string user);
+        User_DTO Execute(string user);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Application.Model
 {
-    public class Post_DTO : IPost_DTO
+    public class Post_DTO
     {
         // PUBLIC PROPERTIES:
         public string Detail { get; set; }

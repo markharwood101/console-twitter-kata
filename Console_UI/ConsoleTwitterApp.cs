@@ -24,32 +24,30 @@ namespace Console_UI
 
         public void Run()
         {
-            // MAIN LOOP:
             while (true)
             {
-                // DECLARATIONS:
-                var input = Console.ReadLine();
-                var output = "";
+                var _input = Console.ReadLine();
+                var _output = "";
 
                 // PROCESS COMMAND:
-                switch (InputService.GetCommand(input))
+                switch (InputService.GetCommand(_input))
                 {
                     case "read":
-                        output = _readPresenter.Render(_inputsController.GetPostsForUser(input));
+                        _output = _readPresenter.Render(_inputsController.GetPostsForUser(_input));
                         break;
                     case "post":
-                        _inputsController.Post(input);
+                        _inputsController.Post(_input);
                         break;
                     case "follows":
-                        _inputsController.Subscribe(input);
+                        _inputsController.Subscribe(_input);
                         break;
                     case "wall":
-                        output = _wallPresenter.Render(_inputsController.GetWallForUser(input));
+                        _output = _wallPresenter.Render(_inputsController.GetWallForUser(_input));
                         break;
                 }
 
                 // OUTPUT:
-                if (output != "") { Console.WriteLine(output); }
+                if (_output != "") { Console.WriteLine(_output); }
             }
         }
     }

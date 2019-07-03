@@ -15,7 +15,7 @@ namespace Application.UseCases.Query
         }
 
         // PUBLIC METHODS:
-        public IUser_DTO Execute(string user)
+        public User_DTO Execute(string user)
         {
             return _userRepository.Get(user);
         }

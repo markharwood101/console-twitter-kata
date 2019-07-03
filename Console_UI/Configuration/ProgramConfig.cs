@@ -46,14 +46,14 @@ namespace Console_UI.Configuration
             builder.RegisterType<SubscriptionRepository>().As<ISubscriptionRepository>();
 
             // Register POCO objects
-            builder.RegisterType<User>().As<IUser>();
-            builder.RegisterType<User_DTO>().As<IUser_DTO>();
+            builder.RegisterType<User>();
+            builder.RegisterType<User_DTO>();
 
-            builder.RegisterType<Post>().As<IPost>();
-            builder.RegisterType<Post_DTO>().As<IPost_DTO>();
+            builder.RegisterType<Post>();
+            builder.RegisterType<Post_DTO>();
 
-            builder.RegisterType<Subscription>().As<ISubscription>();
-            builder.RegisterType<Subscription_DTO>().As<ISubscription_DTO>();
+            builder.RegisterType<Subscription>();
+            builder.RegisterType<Subscription_DTO>();
 
             // Run Build...
             return builder.Build();
@@ -70,7 +70,9 @@ namespace Console_UI.Configuration
                 cfg => cfg.AddProfile<AutoMapperProfile>()
                 );
 
-            IMapper mapper = new Mapper(config);
+            var mapper = new Mapper(config);
+
+            config.AssertConfigurationIsValid();
 
             return mapper;
         }

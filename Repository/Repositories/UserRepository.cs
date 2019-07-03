@@ -22,12 +22,12 @@ namespace Repository.Repositories
         }
 
         // PUBLIC METHODS:
-        public void Add(IUser_DTO user)
+        public void Add(User_DTO user)
         {
             _context.Users.Add(_mapper.Map<User>(user));
         }
 
-        public IUser_DTO Get(string userName)
+        public User_DTO Get(string userName)
         {
             var user = _context.Users.Where(b => b.Name == userName).FirstOrDefault();
             if (user != null) { user = BuildUser(user); }
@@ -57,10 +57,10 @@ namespace Repository.Repositories
         /// <summary>
         /// Takes the found User and adds Posts and any Subscriptions
         /// </summary>
-        private IUser BuildUser(IUser user)
+        private User BuildUser(User user)
         {
-            IList<IPost> posts = new List<IPost>();
-            IList<ISubscription> subscriptions = new List<ISubscription>();
+            IList<Post> posts = new List<Post>();
+            IList<Subscription> subscriptions = new List<Subscription>();
 
             foreach (var _item in GetPostsForUser(user.Name))
                 posts.Add(_mapper.Map<Post>(_item));
@@ -75,9 +75,9 @@ namespace Repository.Repositories
             return user;
         }
 
-        private IEnumerable<IPost_DTO> GetPostsForUser(string user)
+        private IEnumerable<Post_DTO> GetPostsForUser(string user)
         {
-            IList<IPost_DTO> posts = new List<IPost_DTO>();
+            IList<Post_DTO> posts = new List<Post_DTO>();
 
             foreach (var _item in _context.Posts.Where(b => b.CreatedBy == user).ToList())
             {
@@ -88,9 +88,9 @@ namespace Repository.Repositories
             return posts;
         }
 
-        private IEnumerable<ISubscription_DTO> GetSubscriptionsForUser(string user)
+        private IEnumerable<Subscription_DTO> GetSubscriptionsForUser(string user)
         {
-            IList<ISubscription_DTO> subscriptions = new List<ISubscription_DTO>();
+            IList<Subscription_DTO> subscriptions = new List<Subscription_DTO>();
 
             foreach (var _item in _context.Subscriptions.Where(b => b.Subscriber == user).ToList())
             {

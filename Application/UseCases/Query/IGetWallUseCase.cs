@@ -5,6 +5,6 @@ namespace Application.UseCases.Query
 {
     public interface IGetWallUseCase
     {
-        IEnumerable<IPost_DTO> Execute(string subscriber);
+        IEnumerable<Post_DTO> Execute(string subscriber);
     }
 }

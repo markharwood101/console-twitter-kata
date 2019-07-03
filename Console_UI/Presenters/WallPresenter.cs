@@ -10,10 +10,10 @@ namespace Console_UI.Presenters
 {
     public class WallPresenter : IWallPresenter
     {
-        public string Render(IEnumerable<IPost_DTO> input)
+        public string Render(IEnumerable<Post_DTO> input)
         {
             var _output = new StringBuilder();
-            IEnumerable<IPost_DTO> orderedList = input.OrderByDescending(cd => cd.CreatedDateStamp);
+            IEnumerable<Post_DTO> orderedList = input.OrderByDescending(cd => cd.CreatedDateStamp);
 
             foreach (var _item in orderedList)
             {

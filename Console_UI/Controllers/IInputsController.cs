@@ -7,7 +7,7 @@ namespace Console_UI.Controllers
     {
         void Post(string input);
         void Subscribe(string input);
-        IUser_DTO GetPostsForUser(string user);
-        IEnumerable<IPost_DTO> GetWallForUser(string input);
+        User_DTO GetPostsForUser(string user);
+        IEnumerable<Post_DTO> GetWallForUser(string input);
     }
 }

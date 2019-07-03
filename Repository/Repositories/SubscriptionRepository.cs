@@ -21,12 +21,12 @@ namespace Repository.Repositories
         }
 
         // PUBLIC METHODS:
-        public void Add(ISubscription_DTO subscription)
+        public void Add(Subscription_DTO subscription)
         {
             _context.Subscriptions.Add(_mapper.Map<Subscription>(subscription));
         }
 
-        public ISubscription_DTO Get(string subscriber, string follows)
+        public Subscription_DTO Get(string subscriber, string follows)
         {
             return _mapper.Map<Subscription_DTO>(_context.Subscriptions
                 .Where(u => u.Subscriber == subscriber & u.Follows == follows)

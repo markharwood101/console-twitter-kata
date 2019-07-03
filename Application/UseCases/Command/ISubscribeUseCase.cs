@@ -4,6 +4,6 @@ namespace Application.UseCases.Command
 {
     public interface ISubscribeUseCase
     {
-        void Execute(ISubscription_DTO subscription);
+        void Execute(Subscription_DTO subscription);
     }
 }

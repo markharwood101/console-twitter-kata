@@ -20,7 +20,7 @@ namespace Repository.Repositories
         }
 
         // PUBLIC METHODS:
-        public void Add(IPost_DTO post)
+        public void Add(Post_DTO post)
         {
             _context.Posts.Add(_mapper.Map<Post>(post));
         }

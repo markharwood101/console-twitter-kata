@@ -5,6 +5,6 @@ namespace Console_UI.Presenters
 {
     public interface IWallPresenter
     {
-        string Render(IEnumerable<IPost_DTO> input);
+        string Render(IEnumerable<Post_DTO> input);
     }
 }

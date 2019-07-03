@@ -17,11 +17,11 @@ namespace Application.UseCases.Command
         }
 
         // PUBLIC METHODS:
-        public void Execute(IPost_DTO post)
+        public void Execute(Post_DTO post)
         {
-            var postedBy = _userRepository.Get(post.CreatedBy);
+            var _postedBy = _userRepository.Get(post.CreatedBy);
 
-            if (postedBy == null)
+            if (_postedBy == null)
             {
                 _userRepository.Add(new User_DTO { Name = post.CreatedBy });
             }

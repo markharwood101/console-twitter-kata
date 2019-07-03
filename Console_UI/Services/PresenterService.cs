@@ -11,33 +11,33 @@ namespace Console_UI.Services
         public static string GetElapsedTime(DateTime createdDateStamp)
         {
             // DECLARATIONS:
-            TimeSpan elapsedTime;
-            int seconds = 0;
-            int minutes = 0;
-            string output;
+            TimeSpan _elapsedTime;
+            int _seconds = 0;
+            int _minutes = 0;
+            string _output;
 
-            elapsedTime = DateTime.Now - createdDateStamp;
-            seconds = (int)elapsedTime.TotalSeconds;
+            _elapsedTime = DateTime.Now - createdDateStamp;
+            _seconds = (int)_elapsedTime.TotalSeconds;
 
             // Split out minutes and seconds...
-            if (seconds >= 60)
-                minutes = seconds / 60;
+            if (_seconds >= 60)
+                _minutes = _seconds / 60;
 
-            if (minutes > 0)
-                seconds -= minutes * 60;
+            if (_minutes > 0)
+                _seconds -= _minutes * 60;
 
             // Format output...
-            if (minutes > 0)
+            if (_minutes > 0)
             {
-                output = "(" + minutes.ToString() + " minutes and " + seconds.ToString() + " seconds ago.)";
+                _output = "(" + _minutes.ToString() + " minutes and " + _seconds.ToString() + " seconds ago.)";
             }
             else
             {
-                output = "(" + seconds.ToString() + " seconds ago.)";
+                _output = "(" + _seconds.ToString() + " seconds ago.)";
             }
 
             // DEFAULT RETURN:
-            return output;
+            return _output;
         }
 
     }

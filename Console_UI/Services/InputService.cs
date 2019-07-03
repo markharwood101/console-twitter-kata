@@ -9,11 +9,10 @@ namespace Console_UI.Services
         /// </summary>
         public static string GetCommand(string input)
         {
-            // DECLARATIONS:
-            string[] inputs = input.Split(" ");
+            string[] _inputs = input.Split(" ");
 
             // Is it a read command?
-            if (inputs.Count() == 1)
+            if (_inputs.Count() == 1)
             {
                 return "read";
             }
@@ -24,10 +23,10 @@ namespace Console_UI.Services
                 return "post";
             }
 
-            if (inputs.Count() > 1)
+            if (_inputs.Count() > 1)
             {
                 // Is it a follows or a wall command
-                switch (inputs[1])
+                switch (_inputs[1])
                 {
                     case "follows":
                         return "follows";

@@ -13,8 +13,8 @@ namespace Console_UI.Controllers
         private readonly ISubscribeUseCase _subscribeUseCase;
         private readonly IReadUseCase _readUseCase;
         private readonly IGetWallUseCase _getWallUseCase;
-        private readonly IPost_DTO _post;
-        private readonly ISubscription_DTO _subscription;
+        private readonly Post_DTO _post;
+        private readonly Subscription_DTO _subscription;
 
         // CONSTRUCTOR:
         public InputsController(
@@ -22,8 +22,8 @@ namespace Console_UI.Controllers
             ISubscribeUseCase subscribeUseCase,
             IReadUseCase readUseCase,
             IGetWallUseCase getWallUseCase,
-            IPost_DTO post,
-            ISubscription_DTO subscription
+            Post_DTO post,
+            Subscription_DTO subscription
             )
         {
             _postUseCase = postUseCase;
@@ -72,7 +72,7 @@ namespace Console_UI.Controllers
         /// Executes the GetWallUseCase
         /// Output is a IUser_DTO whose Posts collection is read in the ReadPresenter
         /// </summary>
-        public IUser_DTO GetPostsForUser(string user)
+        public User_DTO GetPostsForUser(string user)
         {
             return _readUseCase.Execute(user);
         }
@@ -81,7 +81,7 @@ namespace Console_UI.Controllers
         /// Executes the ReadUseCase
         /// Output is an IEnumerable of IUser_DTO whose Posts collections are read in the WallPresenter
         /// </summary>
-        public IEnumerable<IPost_DTO> GetWallForUser(string input)
+        public IEnumerable<Post_DTO> GetWallForUser(string input)
         {
             // split string by wall command
             string[] _input = input.Split(" wall");

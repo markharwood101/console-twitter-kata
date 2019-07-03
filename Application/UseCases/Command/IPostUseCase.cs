@@ -4,6 +4,6 @@ namespace Application.UseCases.Command
 {
     public interface IPostUseCase
     {
-        void Execute(IPost_DTO post);
+        void Execute(Post_DTO post);
     }
 }

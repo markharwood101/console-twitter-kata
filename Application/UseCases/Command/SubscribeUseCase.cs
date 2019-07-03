@@ -15,13 +15,13 @@ namespace Application.UseCases.Command
         }
 
         // PUBLIC METHODS:
-        public void Execute(ISubscription_DTO subscription)
+        public void Execute(Subscription_DTO post)
         {
-            var _subscription = _subscriptionRepository.Get(subscription.Subscriber, subscription.Follows);
+            var _subscription = _subscriptionRepository.Get(post.Subscriber, post.Follows);
 
             if (_subscription == null)
             {
-                _subscriptionRepository.Add(subscription);
+                _subscriptionRepository.Add(post);
             }
         }
     }

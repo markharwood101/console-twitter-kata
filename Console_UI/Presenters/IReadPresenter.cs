@@ -4,6 +4,6 @@ namespace Console_UI.Presenters
 {
     public interface IReadPresenter
     {
-        string Render(IUser_DTO input);
+        string Render(User_DTO input);
     }
 }

@@ -1,9 +1,6 @@
-﻿using AutoMapper;
-using Application.Ports;
-
-namespace Repository.Model
+﻿namespace Repository.Model
 {
-    public class Subscription : ISubscription
+    public class Subscription
     {
         // PUBLIC PROPERTIES:
         public string Subscriber { get; set; }

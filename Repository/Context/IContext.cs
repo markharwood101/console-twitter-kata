@@ -5,8 +5,8 @@ namespace Repository.Contexts
 {
     public interface IContext
     {
-        IList<IPost> Posts { get; }
-        IList<IUser> Users { get; }
-        IList<ISubscription> Subscriptions { get; }
+        IList<Post> Posts { get; }
+        IList<User> Users { get; }
+        IList<Subscription> Subscriptions { get; }
     }
 }

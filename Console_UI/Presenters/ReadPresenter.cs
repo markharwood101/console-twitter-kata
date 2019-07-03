@@ -7,7 +7,7 @@ namespace Console_UI.Presenters
 {
     public class ReadPresenter : IReadPresenter
     {
-        public string Render(IUser_DTO user)
+        public string Render(User_DTO user)
         {
             var _output = new StringBuilder();
             var posts = user.Posts.ToList();

@@ -6,22 +6,22 @@ namespace Repository.Contexts
     public class Context : IContext
     {
         // PRIVATE FIELDS:
-        private static IList<IPost> posts;
-        private static IList<IUser> users;
-        private static IList<ISubscription> subscriptions;
+        private static IList<Post> _posts;
+        private static IList<User> _users;
+        private static IList<Subscription> _subscriptions;
 
         // CONSTRUCTOR:
         public Context()
         {
-            if (posts == null) { posts = new List<IPost>(); }
-            if (users == null) { users = new List<IUser>(); }
-            if (subscriptions == null) { subscriptions = new List<ISubscription>(); }
+            if (_posts == null) { _posts = new List<Post>(); }
+            if (_users == null) { _users = new List<User>(); }
+            if (_subscriptions == null) { _subscriptions = new List<Subscription>(); }
         }
 
         // PUBLIC PROPERTIES:
-        public IList<IPost> Posts { get { return posts; } }
-        public IList<IUser> Users { get { return users; } }
-        public IList<ISubscription> Subscriptions { get { return subscriptions; } }
+        public IList<Post> Posts { get { return _posts; } }
+        public IList<User> Users { get { return _users; } }
+        public IList<Subscription> Subscriptions { get { return _subscriptions; } }
 
     }
 }

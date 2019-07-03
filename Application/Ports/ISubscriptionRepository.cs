@@ -4,7 +4,7 @@ namespace Application.Ports
 {
     public interface ISubscriptionRepository
     {
-        void Add(ISubscription_DTO subscription);
-        ISubscription_DTO Get(string subscriber, string follows);
+        void Add(Subscription_DTO subscription);
+        Subscription_DTO Get(string subscriber, string follows);
     }
 }

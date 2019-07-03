@@ -4,6 +4,6 @@ namespace Application.Ports
 {
     public interface IPostRepository
     {
-        void Add(IPost_DTO post);
+        void Add(Post_DTO post);
     }
 }
