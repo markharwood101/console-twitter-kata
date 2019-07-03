@@ -40,7 +40,7 @@ namespace Console_UI.Configuration
             builder.RegisterType<GetWallUseCase>().As<IGetWallUseCase>();
 
             // Register Repositories and Context
-            builder.RegisterType<Context>().As<IContext>();
+            builder.RegisterType<Context>().As<IContext>().SingleInstance();
             builder.RegisterType<PostRepository>().As<IPostRepository>();
             builder.RegisterType<UserRepository>().As<IUserRepository>();
             builder.RegisterType<SubscriptionRepository>().As<ISubscriptionRepository>();
