@@ -5,7 +5,7 @@ using Console_UI.Services;
 
 namespace Console_UI
 {
-    public class ConsoleTwitterApp : IApp
+    public class ConsoleTwitterApp
     {
         private readonly IInputsController _inputsController;
         private readonly IReadPresenter _readPresenter;
