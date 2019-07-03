@@ -26,10 +26,10 @@ namespace Repository.Repositories
             _context.Subscriptions.Add(_mapper.Map<Subscription>(subscription));
         }
 
-        public Subscription_DTO Get(string subscriber, string follows)
+        public Subscription_DTO Get(Subscription_DTO subscription)
         {
             return _mapper.Map<Subscription_DTO>(_context.Subscriptions
-                .Where(u => u.Subscriber == subscriber & u.Follows == follows)
+                .Where(u => u.Subscriber == subscription.Subscriber & u.Follows == subscription.Follows)
                 .FirstOrDefault());
         }
 

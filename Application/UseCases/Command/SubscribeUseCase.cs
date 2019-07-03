@@ -17,7 +17,7 @@ namespace Application.UseCases.Command
         // PUBLIC METHODS:
         public void Execute(Subscription_DTO post)
         {
-            var _subscription = _subscriptionRepository.Get(post.Subscriber, post.Follows);
+            var _subscription = _subscriptionRepository.Get(post);
 
             if (_subscription == null)
             {
